@@ -1,21 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-primary: 'Bebas Neue', sans-serif;
+  --color-accent: #ff00ff;
+  --color-accent-alt: #00ffff;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-light: #ffffff;
+  --color-text-dark: #ffffff;
+  --color-text-light: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-accent);kuygugim 
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+button {
+  font-family: var(--font-primary);
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent-alt);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
