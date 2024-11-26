@@ -1,0 +1,26 @@
+:root {
+  --color-primary: #0a0a0a;
+  --color-accent: #ff00ff;
+  --color-secondary: #00ffff;
+  --color-background: #0a0a0a;
+  --color-text: #ffffff;
+  --font-family: 'Bebas Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}

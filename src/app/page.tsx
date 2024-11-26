@@ -1,60 +1,95 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
+import { useEffect } from "react"
 
-export default function LandingPage() {
-    const [theme, setTheme] = useState<"light" | "dark">("dark")
+export default function Home() {
+    useEffect(() => {
+        const shapes = document.getElementById("background-shapes")
+        shapes?.classList.add("animate-background-enter")
+    }, [])
 
     return (
-        <div className={`theme-${theme}`}>
-            <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-primary text-white">
-                <div className="absolute inset-0 z-0 opacity-20">
+        <div className="relative min-h-screen bg-[#0a0a0a] text-white font-sans overflow-hidden">
+            {/* Background Shapes */}
+            <div
+                id="background-shapes"
+                className="absolute right-0 top-0 w-[70vw] h-full opacity-70 z-10 animate-slideLimited"
+            >
+                <Image
+                    src="/assets/Shapes_Black.jpg"
+                    alt="Background Shape"
+                    fill
+                    className="object-contain"
+                />
+            </div>
+
+            {/* Main Content */}
+            <div className="relative z-20 flex flex-col items-start justify-center min-h-screen px-8 md:px-24 space-y-6">
+                {/* Logo */}
+                <div className="mb-6">
                     <Image
-                        src="/Shapes_Black.jpg"
-                        alt="Background Shapes"
-                        layout="fill"
-                        objectFit="cover"
+                        src="/assets/Main_Black.jpg"
+                        alt="NextGen Management Agency Logo"
+                        width={450}
+                        height={200}
+                        priority
+                        className="drop-shadow-lg"
                     />
                 </div>
-                <header className="z-10 p-4 text-center">
-                    <Image
-                        src="/Main_Black.jpg"
-                        alt="NGMA Logo"
-                        width={400}
-                        height={100}
-                        className="mx-auto"
-                    />
-                    <h1 className="text-5xl font-bold mt-4">
-                        NextGen Management Agency
-                    </h1>
-                    <p className="mt-2 text-lg">
-                        Empowering creators with the tools to grow, engage, and
-                        monetize.
-                    </p>
-                </header>
-                <main className="z-10 flex flex-col items-center mt-8 space-y-4">
-                    <button
-                        onClick={() =>
-                            setTheme(theme === "dark" ? "light" : "dark")
-                        }
-                        className="px-4 py-2 rounded bg-accent hover:bg-accent-hover"
+
+                {/* Headline */}
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 text-left leading-tight tracking-wide animate-fadeInUp">
+                    Elevate Your Career with <br /> NextGen Management Agency
+                </h1>
+
+                {/* Subtext */}
+                <p className="text-lg text-left max-w-2xl mb-6 text-gray-300 animate-fadeInUp delay-200">
+                    Join a platform designed to streamline talent management,
+                    boost growth, and deliver outstanding results. Discover how
+                    we can help you grow your audience and maximize your
+                    potential.
+                </p>
+
+                {/* Call to Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-6 animate-fadeInUp delay-400">
+                    <Link
+                        href="/auth/register"
+                        className="bg-white text-black py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white shadow-lg transform hover:scale-105"
                     >
-                        Toggle Theme
-                    </button>
-                    <a
-                        href="/dashboard"
-                        className="px-6 py-3 text-black bg-white rounded hover:bg-gray-300"
+                        Create an Account
+                    </Link>
+                    <Link
+                        href="/auth/login"
+                        className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-black shadow-lg transform hover:scale-105"
                     >
-                        Get Started
-                    </a>
-                </main>
-                <footer className="absolute bottom-4 text-sm text-center">
-                    <p>
-                        © 2024 NextGen Management Agency. All rights reserved.
-                    </p>
-                </footer>
+                        Login
+                    </Link>
+                </div>
             </div>
+
+            {/* Footer */}
+            <footer className="absolute bottom-0 w-full flex justify-center gap-12 pb-12 text-lg z-50 animate-fadeInUp delay-600">
+                <Link
+                    href="/contact"
+                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                >
+                    Contact
+                </Link>
+                <Link
+                    href="/about"
+                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                >
+                    About
+                </Link>
+                <Link
+                    href="/privacy-policy"
+                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                >
+                    Privacy Policy
+                </Link>
+            </footer>
         </div>
     )
 }

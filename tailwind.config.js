@@ -1,20 +1,18 @@
-import { fontFamily } from "tailwindcss/defaultTheme"
-
-export const darkMode = "class"
-export const content = ["./src/**/*.{js,ts,jsx,tsx}"]
-export const theme = {
-    extend: {
-        fontFamily: {
-            sans: ["Bebas Neue", ...fontFamily.sans],
-        },
-        colors: {
-            accent: "#ff00ff",
-            altAccent: "#00ffff",
-            backgroundDark: "#0a0a0a",
-            backgroundLight: "#ffffff",
-            textDark: "#ffffff",
-            textLight: "#000000",
+module.exports = {
+    content: ["./src/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        extend: {
+            colors: {
+                primary: "#0a0a0a",
+                accent: "#ff00ff",
+                secondary: "#00ffff",
+                background: "#0a0a0a",
+                text: "#ffffff",
+            },
+            fontFamily: {
+                sans: ["Bebas Neue", "sans-serif"],
+            },
         },
     },
+    plugins: [],
 }
-export const plugins = []
