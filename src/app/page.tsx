@@ -18,7 +18,7 @@ export default function Home() {
                 className="absolute right-0 top-0 w-[70vw] h-full opacity-70 z-10 animate-slideLimited"
             >
                 <Image
-                    src="/assets/Shapes_Black.jpg"
+                    src="/public/assets/Shapes_Black.jpg"
                     alt="Background Shape"
                     fill
                     className="object-contain"
@@ -30,7 +30,7 @@ export default function Home() {
                 {/* Logo */}
                 <div className="mb-6">
                     <Image
-                        src="/assets/Main_Black.jpg"
+                        src="/public/assets/Main_Black.jpg"
                         alt="NextGen Management Agency Logo"
                         width={450}
                         height={200}
