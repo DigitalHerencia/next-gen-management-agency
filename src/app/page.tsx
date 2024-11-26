@@ -3,6 +3,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect } from "react"
+import {
+    EnvelopeIcon,
+    ShieldCheckIcon,
+    UserCircleIcon,
+} from "@heroicons/react/24/solid"
 
 export default function Home() {
     useEffect(() => {
@@ -18,7 +23,7 @@ export default function Home() {
                 className="absolute right-0 top-0 w-[70vw] h-full opacity-70 z-10 animate-slideLimited"
             >
                 <Image
-                    src="/public/assets/Shapes_Black.jpg"
+                    src="/assets/background-shape-black.png"
                     alt="Background Shape"
                     fill
                     className="object-contain"
@@ -30,7 +35,7 @@ export default function Home() {
                 {/* Logo */}
                 <div className="mb-6">
                     <Image
-                        src="/public/assets/Main_Black.jpg"
+                        src="/assets/logo-main-black.png"
                         alt="NextGen Management Agency Logo"
                         width={450}
                         height={200}
@@ -56,13 +61,13 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-6 animate-fadeInUp delay-400">
                     <Link
                         href="/auth/register"
-                        className="bg-white text-black py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white shadow-lg transform hover:scale-105"
+                        className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white py-3 px-8 rounded-full text-lg transition-all duration-300 hover:animate-gradient-loop hover:scale-105"
                     >
                         Create an Account
                     </Link>
                     <Link
                         href="/auth/login"
-                        className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-black shadow-lg transform hover:scale-105"
+                        className="bg-white text-black py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white shadow-lg transform hover:scale-105"
                     >
                         Login
                     </Link>
@@ -75,18 +80,21 @@ export default function Home() {
                     href="/contact"
                     className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
                 >
+                    <EnvelopeIcon className="w-7 h-7" />
                     Contact
                 </Link>
                 <Link
                     href="/about"
                     className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
                 >
+                    <UserCircleIcon className="w-7 h-7" />
                     About
                 </Link>
                 <Link
                     href="/privacy-policy"
                     className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
                 >
+                    <ShieldCheckIcon className="w-7 h-7" />
                     Privacy Policy
                 </Link>
             </footer>
