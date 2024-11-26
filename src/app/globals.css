@@ -1,63 +1,29 @@
-/* globals.css */
 :root {
-  --font-primary: 'Bebas Neue', sans-serif;
+  --color-primary: #0a0a0a;
+  --color-secondary: #1a1a1a;
   --color-accent: #ff00ff;
-  --color-accent-alt: #00ffff;
-  --color-bg-dark: #0a0a0a;
-  --color-bg-light: #ffffff;
-  --color-text-dark: #ffffff;
-  --color-text-light: #000000;
+  --color-accent-hover: #ff55ff;
+  --font-family: 'Bebas Neue', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-primary);
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-dark);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.light {
-  background-color: var(--color-bg-light);
-  color: var(--color-text-light);
+  font-family: var(--font-family);
+  color: white;
+  background-color: var(--color-primary);
 }
 
 a {
-  color: var(--color-accent); 
   text-decoration: none;
+  color: var(--color-accent);
 }
 
 a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-family: var(--font-primary);
+  color: var(--color-accent-hover);
 }
 
 button {
-  font-family: var(--font-primary);
-  background-color: var(--color-accent);
-  color: var(--color-text-dark);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--color-accent-alt);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  font-family: var(--font-family);
 }
