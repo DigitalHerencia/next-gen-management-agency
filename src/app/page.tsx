@@ -1,26 +1,18 @@
 "use client"
 
+import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect } from "react"
-import {
-    EnvelopeIcon,
-    ShieldCheckIcon,
-    UserCircleIcon,
-} from "@heroicons/react/24/solid"
 
 export default function Home() {
-    useEffect(() => {
-        const shapes = document.getElementById("background-shapes")
-        shapes?.classList.add("animate-background-enter")
-    }, [])
-
     return (
-        <div className="relative min-h-screen bg-[#0a0a0a] text-white font-sans overflow-hidden">
+        <div className="relative min-h-screen bg-[#0a0a0a] text-white font-sans flex flex-col justify-between">
             {/* Background Shapes */}
-            <div
-                id="background-shapes"
-                className="absolute right-0 top-0 w-[70vw] h-full opacity-70 z-10 animate-slideLimited"
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.7, scale: 1 }}
+                transition={{ duration: 1.5 }}
+                className="absolute right-0 top-0 w-[70vw] h-full z-10"
             >
                 <Image
                     src="/assets/background-shape-black.png"
@@ -28,40 +20,56 @@ export default function Home() {
                     fill
                     className="object-contain"
                 />
-            </div>
+            </motion.div>
+
+            {/* Logo */}
+            <motion.div
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.2 }}
+                className="absolute z-5 left-10 top-10"
+            >
+                <Image
+                    src="/assets/logo-main-black.png"
+                    alt="NextGen Management Agency Logo"
+                    width={150}
+                    height={150}
+                />
+            </motion.div>
 
             {/* Main Content */}
-            <div className="relative z-20 flex flex-col items-start justify-center min-h-screen px-8 md:px-24 space-y-6">
-                {/* Logo */}
-                <div className="mb-6">
-                    <Image
-                        src="/assets/logo-main-black.png"
-                        alt="NextGen Management Agency Logo"
-                        width={450}
-                        height={200}
-                        priority
-                        className="drop-shadow-lg"
-                    />
-                </div>
-
-                {/* Headline */}
-                <h1 className="text-4xl md:text-5xl font-bold mb-2 text-left leading-tight tracking-wide animate-fadeInUp">
+            <div className="relative z-20 flex flex-col items-center justify-center flex-1 space-y-6 text-center">
+                <motion.h1
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className="text-4xl md:text-5xl font-bold leading-tight tracking-wide"
+                >
                     Elevate Your Career with <br /> NextGen Management Agency
-                </h1>
+                </motion.h1>
 
-                {/* Subtext */}
-                <p className="text-lg text-left max-w-2xl mb-6 text-gray-300 animate-fadeInUp delay-200">
+                <motion.p
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2 }}
+                    className="text-lg text-gray-300 max-w-2xl"
+                >
                     Join a platform designed to streamline talent management,
                     boost growth, and deliver outstanding results. Discover how
                     we can help you grow your audience and maximize your
                     potential.
-                </p>
+                </motion.p>
 
-                {/* Call to Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-6 animate-fadeInUp delay-400">
+                {/* Buttons */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    className="flex flex-col sm:flex-row gap-6"
+                >
                     <Link
                         href="/auth/register"
-                        className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white py-3 px-8 rounded-full text-lg transition-all duration-300 hover:animate-gradient-loop hover:scale-105"
+                        className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-black shadow-lg transform hover:scale-105 animate-gradient-x"
                     >
                         Create an Account
                     </Link>
@@ -71,32 +79,36 @@ export default function Home() {
                     >
                         Login
                     </Link>
-                </div>
+                </motion.div>
             </div>
 
             {/* Footer */}
-            <footer className="absolute bottom-0 w-full flex justify-center gap-12 pb-12 text-lg z-50 animate-fadeInUp delay-600">
-                <Link
-                    href="/contact"
-                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+            <footer className="flex justify-center gap-12 py-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    className="flex items-center gap-4"
                 >
-                    <EnvelopeIcon className="w-7 h-7" />
-                    Contact
-                </Link>
-                <Link
-                    href="/about"
-                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
-                >
-                    <UserCircleIcon className="w-7 h-7" />
-                    About
-                </Link>
-                <Link
-                    href="/privacy-policy"
-                    className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
-                >
-                    <ShieldCheckIcon className="w-7 h-7" />
-                    Privacy Policy
-                </Link>
+                    <Link
+                        href="/contact"
+                        className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                    >
+                        <span>📧</span> Contact
+                    </Link>
+                    <Link
+                        href="/about"
+                        className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                    >
+                        <span>ℹ️</span> About
+                    </Link>
+                    <Link
+                        href="/privacy-policy"
+                        className="flex items-center gap-2 transition-colors hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-600 hover:text-white py-2 px-4 rounded-full"
+                    >
+                        <span>🔒</span> Privacy Policy
+                    </Link>
+                </motion.div>
             </footer>
         </div>
     )
