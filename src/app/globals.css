@@ -1,26 +1,25 @@
-:root {
-  --color-primary: #0a0a0a;
-  --color-accent: #ff00ff;
-  --color-secondary: #00ffff;
-  --color-background: #0a0a0a;
-  --color-text: #ffffff;
-  --font-family: 'Bebas Neue', sans-serif;
-}
+/* Tailwind CSS is used. Ensure this is the main CSS file. */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family);
-  color: var(--color-text);
-  background: var(--color-background);
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+#background-shapes {
+  animation: fade-in 0.5s ease-in-out;
 }
 
-a:hover {
-  color: var(--color-secondary);
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
