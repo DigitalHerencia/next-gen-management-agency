@@ -148,7 +148,7 @@ graph TD
 
 3. **Development Tools**:  
    - Visual Studio Code  
-   - ESLint, Prettier, and Tailwind CSS extensions  
+   - ESLint, Prettier, and Tailwind CSS extensionss  
 
 4. **Performance**:  
    - **Next.js** API routes for serverless functions  
