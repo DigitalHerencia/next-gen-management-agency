@@ -7,10 +7,9 @@ export default function MyThemeProvider({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system" // Sync with user's system preference
-      enableSystem
-    >
-      {children}
+      defaultTheme="system"
+      >
+    {children}
     </ThemeProvider>
   );
 }
