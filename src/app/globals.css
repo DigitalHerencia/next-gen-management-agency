@@ -2,20 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* Black */
+    --foreground: #ffffff; /* White */
+    --card: #1a1a1a; /* Slightly lighter black for cards */
+    --card-foreground: #ffffff; /* White text on cards */
+    --popover: #1a1a1a; /* Match card background */
+    --popover-foreground: #ffffff;
+    --primary: linear-gradient(45deg, #ff00ff, #00ffff); /* Gradient matches the image */
+    --primary-foreground: #ffffff;
+    --secondary: #0a0a0a; /* Black as secondary */
+    --secondary-foreground: #ffffff;
+    --muted: #333333; /* Dark gray */
+    --muted-foreground: #cccccc; /* Lighter gray for muted text */
+    --accent: #ff00ff; /* Pink */
+    --accent-foreground: #00ffff; /* Cyan */
+    --destructive: #ff4444; /* Red for destructive actions */
+    --destructive-foreground: #ffffff; /* White text for contrast */
+    --border: #333333; /* Subtle gray for borders */
+    --input: #444444; /* Medium gray for inputs */
+    --ring: #ff00ff; /* Highlight with pink */
+    --radius: 0.5rem; /* Standard border radius */
+    --chart-1: #ff00ff; /* Pink for charts */
+    --chart-2: #00ffff; /* Cyan for charts */
+    --chart-3: #ff9900; /* Orange for variety */
+    --chart-4: #66ff66; /* Green */
+    --chart-5: #3366ff; /* Blue */
+    --token-border-medium: #666666; /* Medium gray border */
+    --token-text-secondary: #999999; /* Secondary text color */
+    --token-main-surface-secondary: #2a2a2a; /* Secondary surface for dark mode */
+    --token-sidebar-surface-primary: #1a1a1a; /* Sidebar surface color */
+    --sidebar-width: 250px; /* Default width for the sidebar */
+    --sidebar-width-icon: 2rem; /* Default width for icons */
+    --radix-navigation-menu-viewport-height: 300px; /* Default height */
+    --radix-navigation-menu-viewport-width: 200px; /* Default width for the navigation menu viewport */
+    --radix-accordion-content-height: 100%; /* Default value for accordion height */
+    --radix-toast-swipe-move-x: 0px; /* Default swipe position */
+    --radix-toast-swipe-end-x: 100px; /* Final swipe position when dismissed */
   }
-}
+  * {
+    @apply border-border;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
 }
