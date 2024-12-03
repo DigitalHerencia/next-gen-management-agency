@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true, // Enable React strict mode
-    swcMinify: true, // Use the SWC compiler for faster builds and smaller bundles
+const nextConfig: import('next').NextConfig = {
+    reactStrictMode: false, 
 };
 
 module.exports = nextConfig;
