@@ -40,6 +40,16 @@
     --radix-accordion-content-height: 100%; /* Default value for accordion height */
     --radix-toast-swipe-move-x: 0px; /* Default swipe position */
     --radix-toast-swipe-end-x: 100px; /* Final swipe position when dismissed */
+    --font-sans: 'Inter', sans-serif;
+    --font-bebas-neue: 'Bebas Neue', sans-serif;
+    
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('/src/app/fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
   }
   * {
     @apply border-border;
@@ -50,7 +60,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
+      font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+      letter-spacing: 0.05em;
   }
 }

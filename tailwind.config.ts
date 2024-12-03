@@ -24,6 +24,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+                sans: ['Inter', 'sans-serif'], // Default
+                bebas: ['Bebas Neue', 'sans-serif'], // Custom
+            },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
