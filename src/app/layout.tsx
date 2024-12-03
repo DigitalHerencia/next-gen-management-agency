@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Bebas_Neue } from 'next/font/google';
 import "./globals.css";
 import MyThemeProvider from "@/providers/theme-provider";
 
 // Load Bebas Neue font
-const bebasNeue = localFont({
-  src: "./fonts/BebasNeue-Regular.ttf",
-  variable: "--font-bebas-neue",
-  weight: "400", // Bebas Neue typically uses normal weight
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bebas-neue',
 });
 
 // Metadata
