@@ -14,20 +14,4 @@ module.exports = {
     // Enable bundled Tailwind CSS support
     tailwindcss: true,
     // Enable bundled font support for fonts served from Google Fonts
-    googleFonts: true,
-    // Enable bundled font support for fonts served from Google Fonts
-    // that do not have display variants
-    googleFontsWithoutDisplay: true,
-    // Enable bundled font support for fonts served from Google Fonts
-    // that do not have italic variants
-    googleFontsWithoutItalic: true,
-    // Enable bundled font support for fonts served from Google Fonts
-    // that do not have bold italic variants
-    googleFontsWithoutBoldItalic: true,
-    // Enable bundled font support for fonts served from Google Fonts
-    // that do not have bold variants
-    googleFontsWithoutBold: true,
-    // Enable bundled font support for fonts served from Google Fonts
-    // that do not have italic variants
-
-}    
+}
