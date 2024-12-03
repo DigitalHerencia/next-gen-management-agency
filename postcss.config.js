@@ -1,8 +1,10 @@
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
-const config = {
-  plugins: [tailwindcss, autoprefixer],
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  plugins: [
+    tailwindcss,
+    autoprefixer,
+  ],
 };
-
-export default config;
