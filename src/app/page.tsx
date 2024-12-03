@@ -10,7 +10,7 @@ export default function Home() {
             {/* Background Shape */}
             <div className="absolute right-0 top-0 w-[70vw] h-[70vh] mt-36 mr-16 z-0">
                 <Image
-                    src="assets/Shapes_Black.png" // Correct relative path
+                    src="/assets/Shapes_Black.png" // Correct relative path
                     alt="Background Shape"
                     width={1400} // Replace with your actual width
                     height={800} // Replace with your actual height
@@ -20,7 +20,7 @@ export default function Home() {
             {/* Logo */}
             <div className="absolute z-0 left-10 top-60">
                 <Image
-                    src="assets/Main_Black.png" // Correct relative path
+                    src="/assets/Main_Black.png" // Correct relative path
                     alt="NextGen Management Agency Logo"
                     width={450}
                     height={275}

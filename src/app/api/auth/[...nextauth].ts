@@ -1,15 +1,15 @@
 import NextAuth, { AuthOptions } from "next-auth";
-import Providers from "next-auth/providers";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
+import Credentials from "next-auth/providers/credentials";
 
 const prisma = new PrismaClient();
 
 const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
-    Providers.Credentials({
+    Credentials({
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email", placeholder: "example@example.com" },
@@ -28,7 +28,7 @@ const authOptions: AuthOptions = {
           throw new Error("No user found");
         }
 
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.passwordHash);
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
           throw new Error("Invalid password");
