@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import { Bebas_Neue } from 'next/font/google';
-import "./globals.css";
-import MyThemeProvider from "@/providers/theme-provider";
+import './globals.css';
+import MyThemeProvider from '@/providers/theme-provider';
 
 const font = Bebas_Neue({
     weight: '400',

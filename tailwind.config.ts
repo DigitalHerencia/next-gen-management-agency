@@ -1,7 +1,7 @@
 import tailwindcssAnimate from "tailwindcss-animate";
-import type { Config } from "tailwindcss";
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -11,23 +11,21 @@ const config: Config = {
   prefix: "",
   theme: {
     container: {
-      center: true, // Fixed boolean issue
-      padding: "2rem",
       screens: {
-        "sm": "640px",
-        "md": "768px",
-        "lg": "1024px",
-        "xl": "1280px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
         "3xl": "1600px",
-        "4xl": "1920px"
+        "4xl": "1920px",
       },
     },
     extend: {
       fontFamily: {
-                sans: ['Inter', 'sans-serif'], // Default
-                bebas: ['Bebas Neue', 'sans-serif'], // Custom
-            },
+        sans: ["Inter", "sans-serif"], // Default
+        bebas: ["Bebas Neue", "sans-serif"], // Custom
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -75,23 +73,23 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" }, // Ensure this variable exists
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" }, // Ensure this variable exists
-          to: { height: "0" },
-        },
-      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0px" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
     },
   },
-  plugins: [tailwindcssAnimate], // Fixed require import
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;
